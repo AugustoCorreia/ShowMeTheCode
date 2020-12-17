@@ -6,8 +6,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class CalculateMapper {
-    private static String STATUS_OK = "OK";
-    private static String STATUS_ERRO = "ERRO!";
+    private static final String STATUS_OK = "OK";
+    private static final String STATUS_ERRO = "ERRO!";
 
     public static CalculateResponse createCalculateResponse(CalculateRequest request,Double valorSemPlano,Double valorComPlano){
 

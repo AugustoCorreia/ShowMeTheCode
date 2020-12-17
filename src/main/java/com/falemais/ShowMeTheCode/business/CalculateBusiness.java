@@ -5,10 +5,10 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class CalculateBusiness implements ICalculateBusiness{
-    private String COD_011 = "011";
-    private String COD_016 = "016";
-    private String COD_017 = "017";
-    private String COD_018 = "018";
+    private final String COD_011 = "011";
+    private final String COD_016 = "016";
+    private final String COD_017 = "017";
+    private final String COD_018 = "018";
 
     @Override
     public Double getTarifa(CalculateRequest request) {
@@ -43,8 +43,8 @@ public class CalculateBusiness implements ICalculateBusiness{
 
     @Override
     public Double getValorChamadaComPlano(CalculateRequest request, Double tarifa) {
-        Double tarifa10 = tarifa + (tarifa*0.1);
-        Integer tempoFinal = request.getTempoLigacao() - request.getPlano().getTempoGratis();
+        double tarifa10 = tarifa + (tarifa*0.1);
+        int tempoFinal = request.getTempoLigacao() - request.getPlano().getTempoGratis();
             if (tempoFinal > 0){
                 return tempoFinal * tarifa10;
             }else {

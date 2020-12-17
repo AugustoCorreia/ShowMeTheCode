@@ -13,7 +13,7 @@ public class CalculateService implements ICalculateService{
     ICalculateBusiness calculateBusiness;
 
     @Override
-    public CalculateResponse calc(CalculateRequest request) throws Exception {
+    public CalculateResponse calc(CalculateRequest request)  {
         Double tarifa = calculateBusiness.getTarifa(request);
         Double valorSemPlano;
         Double valorComPlano;
@@ -24,8 +24,6 @@ public class CalculateService implements ICalculateService{
             valorSemPlano = null;
             valorComPlano = null;
         }
-        CalculateResponse calculateResponse = CalculateMapper.createCalculateResponse(request,valorSemPlano,valorComPlano);
-
-        return calculateResponse;
+         return CalculateMapper.createCalculateResponse(request,valorSemPlano,valorComPlano);
     }
 }
